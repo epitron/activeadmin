@@ -12,7 +12,7 @@ describe ActiveAdmin::BatchActions::ResourceExtension do
 
     it "should have the default action by default" do
       expect(resource.batch_actions.size).to eq 1
-      expect(resource.batch_actions.first.sym == :destroy).to be_truthy
+      expect(resource.batch_actions.first.sym == :destroy).to eq true
     end
 
   end
@@ -35,7 +35,7 @@ describe ActiveAdmin::BatchActions::ResourceExtension do
     end
 
     it "should store the block in the batch action" do
-      expect(resource.batch_actions.first.block).to_not be_nil
+      expect(resource.batch_actions.first.block).to_not eq nil
     end
 
   end

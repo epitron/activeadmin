@@ -19,9 +19,11 @@ if rails_version == '> 5.x'
   gem 'formtastic', github: 'justinfrench/formtastic'
   gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml' # drapergem/draper#697
   gem 'rack-mini-profiler', github: 'MiniProfiler/rack-mini-profiler'
-  gem 'database_cleaner',  github: 'pschambacher/database_cleaner', branch: 'rails5.0', ref: '8dd9fa4'
+  gem 'database_cleaner',  github: 'DatabaseCleaner/database_cleaner'
   gem 'activerecord-jdbc-adapter', github: 'jruby/activerecord-jdbc-adapter', platforms: :jruby
 end
+
+gem 'mime-types', '< 3' # Remove this line when we drop support for Ruby 1.9
 
 # Optional dependencies
 gem 'cancan'
@@ -59,6 +61,7 @@ group :test do
   gem 'cucumber', '1.3.20'
   gem 'database_cleaner' if rails_version != '> 5.x'
   gem 'guard-rspec', require: false
+  gem 'listen', '~> 2.7', platforms: :ruby_19
   gem 'jasmine'
   gem 'jslint_on_rails'
   gem 'launchy'
